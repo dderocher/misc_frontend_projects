@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Todo List</title>
+    <script type="text/javascript" src="assets/js/lib/jquery.js"></script>
+    <link rel="stylesheet" href="assets/css/todos.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" type="text/css" />
+    
+    <script>
+        
+        // Playing around here with an idea to give some indication that
+        // important resources actually loaded...
+        window.addEventListener("error", function(e, url) {
+            var eleArray = ["IMG", "SCRIPT", "LINK"];
+            var resourceMap = {
+                "IMG": "Picture file",
+                "SCRIPT": "JavaScript file",
+                "LINK": "CSS file"
+            };
+            console.log(e);
+            var ele = e.target;
+            if (eleArray.indexOf(ele.tagName) != -1) {
+                var url = ele.tagName == "LINK" ? ele.href : ele.src;
+                console.log("src：" + url + " File" + resourceMap[ele.tagName] + "failed loading. ");
+
+                return true; // dont show in console
+            }
+        }, true);
+    </script>
+</head>
+
+<body>
+    
+    
+    <div id="container">
+        <h1>TO-DO LIST<i id="plus" class="fa fa-plus" aria-hidden="true"></i></h1>
+        <input type="text" name="" placeholder="Add New Todo"/>
+        <ul id="todoList">
+            <li><span class="btnDelete"><i class="fa fa-trash" aria-hidden="true"></i> </span>Do This</li>
+        </ul>
+    </div>
+
+    
+    
+    <script type="text/javascript" src="assets/js/todos.js"></script>
+</body>
+
+</html>

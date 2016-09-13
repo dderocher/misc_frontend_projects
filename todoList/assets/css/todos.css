@@ -1,0 +1,117 @@
+body {
+    /*background: white;*/
+    font-family: roboto;
+    /* fallback for old browsers */
+    background: #00C9FF;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to left, #00C9FF, #92FE9D);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, #00C9FF, #92FE9D);
+}
+
+#container {
+    background-color: #f7f7f1;
+    width: 360px;
+    /*border: 2px solid gray;*/
+    margin: 100px auto;
+    /*padding: 1px;*/
+    /*very faint shadow*/
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    height: 40px;
+    /*helps to center the line*/
+    line-height: 40px;
+    color: #666;
+    /*padding-left: 13px;*/
+}
+
+
+/*Set every other li to be diff*/
+
+li:nth-child(2n) {
+    background-color: #f7f7f1;
+}
+
+h1 {
+    /*text-align: center;*/
+    background-color: #2980b9;
+    /*padding: 10 to top/bottom 20 left/right*/
+    padding: 10px 20px;
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+#plus {
+    float: right;
+}
+
+#container input {
+    width: 100%;
+    /*The width and height properties include the padding and border, 
+        but not the margin.
+        the element extendes beyond the container without this*/
+    box-sizing: border-box;
+    /*border:0;*/
+    padding: 13px 13px 13px 20px;
+    /*margin: 0 auto;*/
+    font-size: 18px;
+    color: #2980b9;
+    background-color: #f7f7f1;
+    
+    /*there is a little gap on left/right edge when control
+    does not have focus.  We can fix this by giving it a fake 
+    border*/
+    border:3px solid rgba(0,0,0,0);
+}
+
+#container input:focus {
+    background-color: white;
+    border: 3px solid #2980b9;
+    /*browser puts a 'blur' outline in addition. This gets rid of it*/
+    outline: none;
+}
+
+.btnDelete {
+    /*border: 1px solid black;*/
+    margin-right: 20px;
+    background-color: gray;
+    height: 40px;
+    text-align: center;
+    /*padding-left: 3px;*/
+    color: white;
+    font-size: small;
+    width: 0;
+    display: inline-block;
+    transition: 0.2s linear;
+    
+    /*when span is collapsed the icon still shows
+    can fix it with opacity*/
+    opacity: 0;
+   
+}
+
+li:hover .btnDelete {
+    width: 40px;
+    color: black;
+    background-color: #e74c3c;
+    opacity:1;
+    
+}
+
+.completed {
+    text-decoration: line-through;
+    /*color:gray;*/
+    opacity: 0.4;
+}
